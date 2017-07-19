@@ -6,7 +6,16 @@
       <a class="nav-link navbar-toggler" href="#" appSidebarToggler>&#9776;</a>
     </li>
     <li class="nav-item px-3">
-      <a class="nav-link" href="#">Dashboard</a>
+      <a class="btn btn-primary" href="#">レガシーモード</a>
+    </li>
+    <li class="nav-item px-3">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="text" placeholder="商品を検索">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+      </form>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" href="#">ｓ</a>
     </li>
     <li class="nav-item px-3">
       <a class="nav-link" href="#">Users</a>
@@ -63,6 +72,82 @@
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-info">NEW</span></a>
         </li>
+
+        <li class="divider"></li>
+        <li class="nav-title">
+          商品を見せる
+        </li>
+        <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
+          <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-puzzle"></i> 商品登録・更新</a>
+          <ul class="nav-dropdown-items">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> 商品マスタ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> 本店化</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> モール化</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> フォトギャラリー</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> カテゴリ</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
+          <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-puzzle"></i> 特集・コンテンツ</a>
+          <ul class="nav-dropdown-items">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> 新着商品</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> ランキング</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> シリーズ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> コーディネート</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> アウトレット</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="divider"></li>
+        <li class="nav-title">
+          売るための準備をする
+        </li>
+        <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
+          <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-puzzle"></i> 物流・販売管理</a>
+          <ul class="nav-dropdown-items">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> ロジザード</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-puzzle"></i> ｘｘｘ</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
+          <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-puzzle"></i> 在庫・ステータス</a>
+          <ul class="nav-dropdown-items">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/buttons']"><i class="icon-puzzle"></i> 在庫更新</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/buttons']"><i class="icon-puzzle"></i> ｘｘｘ</a>
+            </li>
+          </ul>
+        </li>
+
+
         <li class="divider"></li>
         <li class="nav-title">
           UI Elements

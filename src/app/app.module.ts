@@ -12,6 +12,8 @@ import { SIDEBAR_TOGGLE_DIRECTIVES } from './shared/sidebar.directive';
 import { AsideToggleDirective } from './shared/aside.directive';
 import { BreadcrumbsComponent } from './shared/breadcrumb.component';
 
+import { LegacyModeModule } from './legacy-mode/legacy-mode.module';
+
 // Routing Module
 import { AppRoutingModule } from './app.routing';
 
@@ -25,7 +27,8 @@ import { SimpleLayoutComponent } from './layouts/simple-layout.component';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    LegacyModeModule
   ],
   declarations: [
     AppComponent,

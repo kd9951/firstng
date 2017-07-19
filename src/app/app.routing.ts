@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { LegacyModeComponent } from './legacy-mode/legacy-mode.component';
+
 // Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
@@ -21,6 +23,10 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
+      },
+      {
+        path: 'legacy-mode',
+        component: LegacyModeComponent
       },
       {
         path: 'components',

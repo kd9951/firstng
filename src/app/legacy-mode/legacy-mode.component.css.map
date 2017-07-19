@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "legacy-mode.component.css",
+	"sources": [
+		"legacy-mode.component.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,MAAM,CAAC,EAAE,MAAM,EAAE,CAAC,GAAK"
+}

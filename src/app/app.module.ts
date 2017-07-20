@@ -13,6 +13,7 @@ import { AsideToggleDirective } from './shared/aside.directive';
 import { BreadcrumbsComponent } from './shared/breadcrumb.component';
 
 import { LegacyModeModule } from './legacy-mode/legacy-mode.module';
+import { ItemsModule } from './items/items.module';
 
 // Routing Module
 import { AppRoutingModule } from './app.routing';
@@ -28,7 +29,8 @@ import { SimpleLayoutComponent } from './layouts/simple-layout.component';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
-    LegacyModeModule
+    LegacyModeModule,
+    ItemsModule
   ],
   declarations: [
     AppComponent,

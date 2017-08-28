@@ -393,7 +393,7 @@ $btn-transition:                 all .2s ease-in-out !default;
 
 // Forms
 
-$input-bg:                       $white !default;
+$input-bg:                       rgba($gray-lightest,0.5) !default;
 $input-bg-disabled:              $gray-lighter !default;
 
 $input-color:                    $gray !default;

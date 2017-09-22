@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
+import { Http, Headers } from "@angular/http";  
+import { GoodsService } from '../goods.service';
 
 
 @Component({
@@ -10,10 +12,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class SearchboxComponent implements OnInit {
 
   conditions :SearchCondition
-
+  result_count = 0;
   openDetail = false;
   
-  constructor() { }
+  constructor( private http: Http, private goodsService:GoodsService ) {  
+  }
 
   ngOnInit() {
     this.conditions = new SearchCondition;
@@ -36,6 +39,8 @@ export class SearchboxComponent implements OnInit {
     event.preventDefault( true );
     console.log( 'execute' );
     // console.log( this.conditions );
+
+    this.goodsService.search( this.conditions ).subscribe( response => this.result_count = response );
 
     // var conditions = new SearchCondition;
     // conditions.keyword = this.name;

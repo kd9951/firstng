@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -22,15 +24,20 @@ import { AppRoutingModule } from './app.routing';
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 
+// import { SearchboxComponent } from './searchbox/searchbox.component';
+import { GoodsService } from './goods.service';
+
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
     LegacyModeModule,
     ItemsModule
+    
   ],
   declarations: [
     AppComponent,
@@ -39,12 +46,13 @@ import { SimpleLayoutComponent } from './layouts/simple-layout.component';
     NAV_DROPDOWN_DIRECTIVES,
     BreadcrumbsComponent,
     SIDEBAR_TOGGLE_DIRECTIVES,
+  //  SearchboxComponent,
     AsideToggleDirective,
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+  providers: [
+     { provide: LocationStrategy, useClass: HashLocationStrategy }
+    ,{ provide: GoodsService, useClass: GoodsService }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

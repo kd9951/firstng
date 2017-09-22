@@ -1,5 +1,11 @@
 <div class="animated fadeIn">
   <div class="row">
+
+  <app-searchbox (submit)="onSearchSubmitted($event)" (change)="onSearchConditionChanged($event)"></app-searchbox>
+
+
+  <!-- results.goods :{{results[0].dt_goods}} -->
+
     <div class="col-12">
       <div class="card">
 <!--
@@ -12,61 +18,21 @@
 
             <thead>
               <tr>
-                <th>名前</th>
-                <th>年齢</th>
-                <th>Role</th>
-                <th>Status</th>
+                <th>商品No.</th>
+                <th>商品名</th>
+                <th></th>
+                <th>価格</th>
               </tr>
             </thead>
             <tbody>
 
-              <tr *ngFor="let member of members">
-                <td>{{member}}</td>
-                <td>{{member}}</td>
-                <td>{{member}}</td>
-                <td>{{member}}</td>
+              <tr *ngFor="let item of results">
+                <td>{{item.nm_goods}}</td>
+                <td>{{item.dt_goods}}</td>
+                <td>{{item.dt_size}}</td>
+                <td>{{item.kn_price}}</td>
               </tr>
 
-              <tr>
-                <td>Samppa Nori</td>
-                <td>2012/01/01</td>
-                <td>Member</td>
-                <td>
-                  <span class="badge badge-success">Active</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Estavan Lykos</td>
-                <td>2012/02/01</td>
-                <td>Staff</td>
-                <td>
-                  <span class="badge badge-danger">Banned</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Chetan Mohamed</td>
-                <td>2012/02/01</td>
-                <td>Admin</td>
-                <td>
-                  <span class="badge badge-default">Inactive</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Derick Maximinus</td>
-                <td>2012/03/01</td>
-                <td>Member</td>
-                <td>
-                  <span class="badge badge-warning">Pending</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Friderik Dรกvid</td>
-                <td>2012/01/21</td>
-                <td>Staff</td>
-                <td>
-                  <span class="badge badge-success">Active</span>
-                </td>
-              </tr>
             </tbody>
           </table>
           <ul class="pagination">

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LegacyModeComponent } from './legacy-mode/legacy-mode.component';
 import { ItemsComponent } from './items/items.component';
+import { SearchboxComponent } from './searchbox/searchbox.component';
 
 // Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
@@ -28,6 +29,10 @@ export const routes: Routes = [
       {
         path: 'items',
         component: ItemsComponent
+      },
+      {
+        path: 'search',
+        component: SearchboxComponent
       },
       {
         path: 'legacy-mode',

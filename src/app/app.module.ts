@@ -26,6 +26,7 @@ import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 
 // import { SearchboxComponent } from './searchbox/searchbox.component';
 import { GoodsService } from './goods.service';
+import { StatisticsService } from './statistics.service';
 
 @NgModule({
   imports: [
@@ -52,6 +53,7 @@ import { GoodsService } from './goods.service';
   providers: [
      { provide: LocationStrategy, useClass: HashLocationStrategy }
     ,{ provide: GoodsService, useClass: GoodsService }
+    ,{ provide: StatisticsService, useClass: StatisticsService }
   ],
   bootstrap: [ AppComponent ]
 })

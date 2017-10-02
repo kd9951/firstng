@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StatisticsService } from '../statistics.service';
 
 @Component({
   templateUrl: 'dashboard.component.html'
@@ -7,6 +8,25 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   // constructor( ) { }
+  constructor( private statisticsService:StatisticsService ) {  
+  }
+
+  ngOnInit(): void {
+    // generate random values for mainChart
+    for (let i = 0; i <= this.mainChartElements; i++) {
+      this.mainChartData1.push(this.random(50, 200));
+      this.mainChartData2.push(this.random(80, 100));
+      this.mainChartData3.push(65);
+    }
+    this.statisticsService.get( ).subscribe( response =>{
+      console.log(this.lineChart1Data); 
+      // this.lineChart1Data[0].data = response; 
+      this.lineChart1Data = [{ data: response }]; 
+      console.log(this.lineChart1Data); 
+    });
+
+  }
+
 
   public brandPrimary = '#20a8d8';
   public brandSuccess = '#4dbd74';
@@ -45,11 +65,15 @@ export class DashboardComponent implements OnInit {
   // lineChart1
   public lineChart1Data: Array<any> = [
     {
-      data: [65, 59, 84, 84, 51, 55, 40],
+      data: [0],
       label: 'Series A'
     }
+    // ,{
+    //   data: [65, 59, 84, 84, 51, 55, 40],
+    //   label: 'Series B'
+    // }
   ];
-  public lineChart1Labels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChart1Labels: Array<any> = ['2017/3', '2017/4', '2017/5', '2017/6', '2017/7', '2017/8', '2017/9'];
   public lineChart1Options: any = {
     maintainAspectRatio: false,
     scales: {
@@ -462,12 +486,4 @@ export class DashboardComponent implements OnInit {
   public sparklineChartType = 'line';
 
 
-  ngOnInit(): void {
-    // generate random values for mainChart
-    for (let i = 0; i <= this.mainChartElements; i++) {
-      this.mainChartData1.push(this.random(50, 200));
-      this.mainChartData2.push(this.random(80, 100));
-      this.mainChartData3.push(65);
-    }
-  }
 }

@@ -10,7 +10,7 @@
           <label class="col-md-3 form-control-label">フリーワード</label>
           <div class="col-md-9">
             <input type="text" id="text-input" class="form-control" placeholder="{{name}}商品名、商品コード、etc..."
-            name="miun"  [(ngModel)]="conditions.keyword" />
+            name="miun"  [(ngModel)]="conditions.keyword"  (ngModelChange)="change($event)"/>
             <!-- <span class="help-block">This is a help text</span> -->
           </div>
         </div>
@@ -19,12 +19,12 @@
           <label class="col-md-3 form-control-label" for="select">商品No.</label>
           <div class="col-md-4">
             <input type="text" id="text-input" name="min" class="form-control" placeholder="7077"  
-            [(ngModel)]="conditions.nm_goods_min">
+            [(ngModel)]="conditions.nm_goods_min" (ngModelChange)="change($event)">
           </div>
           <div class="col-md-1">&#x301C;</div>
           <div class="col-md-4">
             <input type="text" id="text-input" name="max" class="form-control" placeholder="11213"  
-            [(ngModel)]="conditions.nm_goods_max">
+            [(ngModel)]="conditions.nm_goods_max" (ngModelChange)="change($event)">
           </div>
         </div>
 
@@ -32,43 +32,50 @@
           <label class="col-md-3 form-control-label">フラグ</label>
           <div class="col-md-9">
             <label class="switch switch-default switch-pill switch-primary">
-              <input class="switch-input" type="checkbox">
+              <input class="switch-input" type="checkbox" name="fg_pickup"
+                [(ngModel)]="conditions.fg_pickup" (ngModelChange)="change($event)">
               <span class="switch-label"></span><span class="switch-handle"></span>
             </label>
             ピックアップのみ
 
             <label class="switch switch-default switch-pill switch-primary">
-              <input class="switch-input" type="checkbox">
+              <input class="switch-input" type="checkbox" name="fg_vailed"
+                [(ngModel)]="conditions.fg_vailed" (ngModelChange)="change($event)">
               <span class="switch-label"></span><span class="switch-handle"></span>
             </label>
             非公開のみ
 
             <label class="switch switch-default switch-pill switch-primary">
-              <input class="switch-input" type="checkbox">
+              <input class="switch-input" type="checkbox" name="fg_public"
+                [(ngModel)]="conditions.fg_public" (ngModelChange)="change($event)">
               <span class="switch-label"></span><span class="switch-handle"></span>
             </label>
             公開のみ
 
             <label class="switch switch-default switch-pill switch-primary">
-              <input class="switch-input" type="checkbox">
+              <input class="switch-input" type="checkbox"
+                [(ngModel)]="conditions.fg_soldout" (ngModelChange)="change($event)">
               <span class="switch-label"></span><span class="switch-handle"></span>
             </label>
             売り切れの商品
 
             <label class="switch switch-default switch-pill switch-primary">
-              <input class="switch-input" type="checkbox">
+              <input class="switch-input" type="checkbox"
+                [(ngModel)]="conditions.fg_reviewed" (ngModelChange)="change($event)">
               <span class="switch-label"></span><span class="switch-handle"></span>
             </label>
             レビューのある商品
 
             <label class="switch switch-default switch-pill switch-primary">
-              <input class="switch-input" type="checkbox">
+              <input class="switch-input" type="checkbox"
+                [(ngModel)]="conditions.fg_container" (ngModelChange)="change($event)">
               <span class="switch-label"></span><span class="switch-handle"></span>
             </label>
             コンテナ
 
             <label class="switch switch-default switch-pill switch-primary">
-              <input class="switch-input" type="checkbox">
+              <input class="switch-input" type="checkbox"
+                [(ngModel)]="conditions.fg_oem" (ngModelChange)="change($event)">
               <span class="switch-label"></span><span class="switch-handle"></span>
             </label>
             OEM（オリジナル）

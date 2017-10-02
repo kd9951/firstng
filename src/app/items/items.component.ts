@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map'
-import { Http, Headers } from "@angular/http";         // <--- 追加
+// import { Http, Headers } from "@angular/http";         // <--- 追加
 import { GoodsService } from '../goods.service';
 import { SearchCondition } from '../searchbox/searchbox.component';
 
@@ -15,7 +15,7 @@ export class ItemsComponent implements OnInit {
 
   results:object;
   
-  constructor( private http: Http, private goodsService:GoodsService ) {  
+  constructor( private goodsService:GoodsService ) {  
   }
 
   ngOnInit() {
@@ -30,10 +30,6 @@ export class ItemsComponent implements OnInit {
     this.goodsService.search( searchConditions ).subscribe( response => this.results = response );
   }
 
-  onSearchConditionChanged( searchConditions  :SearchCondition  )
-  {
-    this.goodsService.search( searchConditions ).subscribe( response => this.results = response );
-  }
 
 
 }

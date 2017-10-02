@@ -23,7 +23,6 @@ export class SearchboxComponent implements OnInit {
   }
   
   @Output() submit  = new EventEmitter<SearchCondition>();
-  @Output() changed = new EventEmitter<SearchCondition>();
 
   toggleDetail(event) {
     this.openDetail = !this.openDetail;
@@ -40,13 +39,20 @@ export class SearchboxComponent implements OnInit {
     console.log( 'execute' );
     // console.log( this.conditions );
 
-    this.goodsService.search( this.conditions ).subscribe( response => this.result_count = response );
 
     // var conditions = new SearchCondition;
     // conditions.keyword = this.name;
     this.submit.emit(this.conditions);
   }
-  
+
+  timerid = 0;
+  change(event) {
+    if( this.timerid ) clearTimeout( this.timerid );
+    this.timerid = setTimeout(()=>{
+      this.goodsService.count( this.conditions ).subscribe( response => this.result_count = response );
+      this.timerid = 0;
+    },500);
+  }
 }
 
 // 本来はココじゃなくて、サーバーとやり取りするサービスに持たすべき、か。
@@ -60,4 +66,5 @@ export class SearchCondition {
   fg_soldout   = false;
   fg_reviewed  = false;
   fg_container = false;
+  fg_oem       = false;
 }

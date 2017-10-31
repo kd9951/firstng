@@ -1,0 +1,12 @@
+{{src}} {{unit}} {{start}}
+<div class="chart-wrapper basechart" >
+  <canvas baseChart class="chart"
+  [datasets]="mainChartData"
+  [labels]="mainChartLabels"
+  [options]="mainChartOptions"
+  [colors]="mainChartColours"
+  [legend]="mainChartLegend"
+  [chartType]="mainChartType"
+  (chartHover)="chartHovered($event)"
+  (chartClick)="chartClicked($event)"></canvas>
+</div>

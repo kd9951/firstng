@@ -18,12 +18,6 @@ export class DashboardComponent implements OnInit {
       this.mainChartData2.push(this.random(80, 100));
       this.mainChartData3.push(65);
     }
-    this.statisticsService.get( ).subscribe( response =>{
-      console.log(this.lineChart1Data); 
-      // this.lineChart1Data[0].data = response; 
-      this.lineChart1Data = [{ data: response }]; 
-      console.log(this.lineChart1Data); 
-    });
 
   }
 

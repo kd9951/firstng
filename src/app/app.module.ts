@@ -27,6 +27,9 @@ import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 // import { SearchboxComponent } from './searchbox/searchbox.component';
 import { GoodsService } from './goods.service';
 import { StatisticsService } from './statistics.service';
+import { LinechartComponent } from './chars/linechart/linechart.component';
+import { BasechartComponent } from './chars/basechart/basechart.component';
+import { SimplechartComponent } from './chars/simplechart/simplechart.component';
 
 @NgModule({
   imports: [
@@ -49,6 +52,9 @@ import { StatisticsService } from './statistics.service';
     SIDEBAR_TOGGLE_DIRECTIVES,
   //  SearchboxComponent,
     AsideToggleDirective,
+  BasechartComponent,
+  // SimplechartComponent,
+  // LinechartComponent,
   ],
   providers: [
      { provide: LocationStrategy, useClass: HashLocationStrategy }

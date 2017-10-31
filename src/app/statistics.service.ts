@@ -15,8 +15,9 @@ export class StatisticsService {
     this.headers.append('Content-Type', 'application/json');
   }
 
-  get() {
-      return this.http.get( this.url + '/Statistics/Access/' )
+  get( url:string ) {
+    console.log( 'get:url:' + this.url + url );
+      return this.http.get( this.url + url )
         .map(response => response.json().body);
     }
 

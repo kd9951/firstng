@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-6 col-lg-3">
       <div class="card card-inverse card-primary">
+  
         <div class="card-block pb-0">
           <div class="btn-group float-right" dropdown>
             <button type="button" class="btn btn-transparent dropdown-toggle p-0" dropdownToggle>
@@ -16,17 +17,15 @@
           <h4 class="mb-0">51,505,347</h4>
           <p>売上 30日合計と日次推移</p>
         </div>
-        <div class="chart-wrapper px-3" style="height:70px;">
-          <canvas baseChart class="chart"
-          [datasets]="lineChart1Data"
-          [labels]="lineChart1Labels"
-          [options]="lineChart1Options"
-          [colors]="lineChart1Colours"
-          [legend]="lineChart1Legend"
-          [chartType]="lineChart1Type"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
-        </div>
+        
+        <app-simplechart 
+          src="/Statistics/adwords_cost/" 
+          unit="dayly" 
+          start="2017-09-03" 
+          end="2017-10-02" 
+          brandPrimary="#cccccc"
+        ></app-simplechart>
+        
       </div>
     </div><!--/.col-->
     <div class="col-sm-6 col-lg-3">
@@ -38,17 +37,15 @@
           <h4 class="mb-0">15,924</h4>
           <p>客単価</p>
         </div>
-        <div class="chart-wrapper px-3" style="height:70px;">
-          <canvas baseChart class="chart"
-          [datasets]="lineChart2Data"
-          [labels]="lineChart2Labels"
-          [options]="lineChart2Options"
-          [colors]="lineChart2Colours"
-          [legend]="lineChart2Legend"
-          [chartType]="lineChart2Type"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)"></canvas>
-        </div>
+
+        <app-simplechart 
+          src="/Statistics/adwords_total/" 
+          unit="dayly" 
+          start="2017-09-03" 
+          end="2017-10-02" 
+          brandPrimary="#cccccc"
+        ></app-simplechart>
+
       </div>
     </div><!--/.col-->
     <div class="col-sm-6 col-lg-3">
@@ -134,7 +131,8 @@
           </div>
         </div><!--/.col-->
       </div><!--/.row-->
-      <div class="chart-wrapper" style="height:300px;margin-top:40px;">
+      <app-linechart src="/Statistics/total_sales/" unit="dayly" start="2017-09-03" end="2017-10-02" brandPrimary="#cccccc"></app-linechart>
+      <!-- <div class="chart-wrapper" style="height:300px;margin-top:40px;">
         <canvas baseChart class="chart"
         [datasets]="mainChartData"
         [labels]="mainChartLabels"
@@ -144,7 +142,7 @@
         [chartType]="mainChartType"
         (chartHover)="chartHovered($event)"
         (chartClick)="chartClicked($event)"></canvas>
-      </div>
+      </div> -->
     </div>
     <div class="card-footer">
       <ul>
